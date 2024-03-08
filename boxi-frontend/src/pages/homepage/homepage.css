@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+.homepage-message-h1 {
+  font-family: "Lora", sans-serif;
+  font-size: 8vh;
+}
+
+.homepage-message-p {
+  font-family: "Lora", sans-serif;
+
+  font-size: 5vh;
+}
+
+.homepage-message-button {
+  font-family: "Lora", sans-serif;
+  height: 10vh;
+  width: 20vw;
+  font-size: 4vh;
+  background-color: burlywood;
+}
+
+.parallax-section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  background-image: url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1709884979/boxi/djambo1990_51954_dawn_in_a_golden_hue_with_a_giant_sun_rising_o_95c9df71-12c3-4e05-80a2-5728dace761d_du3hci.png");
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.parallax-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
