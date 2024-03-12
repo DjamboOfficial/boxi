@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.horizontal-parallax {
+  font-family: "Montserrat", sans-serif;
+  height: 80vh;
+  background-image: url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1709908516/boxi/djambo1990_51954_Hyperrealistic_photograph_of_a_studio_where_a__ddccb40e-63af-44b2-850e-9ab7b7104697_pz5sz7.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.horizontal-parallax-nav {
+  height: 20vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.horizontal-parallax-nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 5vh;
+}
+
+.horizontal-parallax-nav a {
+  color: black;
+  background-color: antiquewhite;
+  border-radius: 2vh;
+  text-decoration: none;
+  font-size: 3vh;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.horizontal-parallax-nav a:hover {
+  color: blue;
+}

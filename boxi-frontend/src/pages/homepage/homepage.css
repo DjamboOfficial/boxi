@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage-logo {
+  height: 20vh;
+  align-self: center;
+}
+
 .homepage-message-h1 {
   font-family: "Lora", sans-serif;
   font-size: 8vh;
