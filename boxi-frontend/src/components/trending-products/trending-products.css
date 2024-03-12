@@ -1,0 +1,22 @@
+.trending-items-container {
+  height: 50vh;
+  display: flex;
+  width: 100%;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+}
+
+.trending-item-card {
+  height: 40vh;
+  width: 20vw;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trending-item-card img {
+  height: 10vh;
+}
