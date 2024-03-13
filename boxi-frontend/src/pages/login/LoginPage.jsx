@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUserAuth } from "../../contexts/userAuthContext";
 import "./login.css";
+import axios from "axios";
 
 export const LoginPage = () => {
+  const { isLoggedIn, setIsLoggedIn } = useUserAuth();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   const navigate = useNavigate();
 
   const handleUsernameChange = (e) => {
@@ -13,25 +19,39 @@ export const LoginPage = () => {
     setPassword(e.target.value);
   };
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/auth/user/login",
+        {
+          username,
+          password,
+        }
+      );
+      const { token } = response.data;
+      localStorage.setItem("token", token);
+      setIsLoggedIn(true);
+      setUsername(username);
+      console.log(username);
+      navigate("/");
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
 
   return (
     <>
-      <div className="signup-page-container">
-        <div className="signup-page-form-container">
-          <form className="signup-form" onSubmit={handleSubmit}>
+      <div className="login-page-container">
+        <div className="login-page-form-container">
+          <form className="login-form" onSubmit={handleSubmit}>
             <label htmlFor="username">Username</label>
             <input
               type="text"
               id="username"
               name="username"
-              value=""
+              value={username}
               onChange={handleUsernameChange}
             />
             <label htmlFor="password">Password</label>
@@ -39,11 +59,11 @@ export const LoginPage = () => {
               type="password"
               id="password"
               name="password"
-              value=""
+              value={password}
               onChange={handlePasswordChange}
             />
 
-            <button type="submit">Sign Up</button>
+            <button type="submit">Login</button>
           </form>
         </div>
       </div>
