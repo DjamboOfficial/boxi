@@ -6,8 +6,12 @@ export const Header = () => {
       <div className="header-container">
         <button>Edo</button>
         <button>boxi</button>
-        <button>boh</button>
-        <button>bih</button>
+        <button>
+          <a href="/signup">Log In</a>
+        </button>
+        <button>
+          <a href="/signup">Sign Up</a>
+        </button>
       </div>
     </>
   );
