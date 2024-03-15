@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../contexts/userAuthContext";
+import axios from "axios";
 import "./signup.css";
 
 export const SignupPage = () => {

@@ -4,6 +4,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 const connectDB = require("./db.js");
 const userAuthRoutes = require("./routes/userAuthRoutes.js");
+const productRoutes = require("./routes/productRoutes.js");
+const artisanRoutes = require("./routes/artisanRoutes.js");
+const cors = require("cors");
 
 connectDB()
   .then((db) => {
@@ -14,9 +17,12 @@ connectDB()
   });
 
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", userAuthRoutes);
+app.use("/products", productRoutes);
+app.use("/artisan", artisanRoutes);
 
 app.get("/", (req, res) => {
   res.send("Ciao Stronzi!");

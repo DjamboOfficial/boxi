@@ -22,11 +22,6 @@ export const Homepage = () => {
     <>
       <Header />
       <div className="homepage-container">
-        <img
-          className="homepage-logo"
-          src="https://res.cloudinary.com/dgwvbd9ki/image/upload/v1709892175/portfolio/boxi-logo-white_fkr3nz.png"
-          alt="boxi-logo"
-        />
         <div>
           <div className="parallax-section">
             <animated.div

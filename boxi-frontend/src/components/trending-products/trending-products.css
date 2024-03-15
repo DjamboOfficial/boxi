@@ -1,19 +1,20 @@
 .trending-items-container {
+  margin: 1vh;
   height: 50vh;
   display: flex;
   width: 100%;
-  background-color: blue;
-  justify-content: center;
-  align-items: center;
+  gap: 2vw;
 }
 
 .trending-item-card {
+  background-color: white;
+  color: black;
   height: 40vh;
   width: 20vw;
-  background-color: red;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 0vh;
+  justify-content: center;
   align-items: center;
 }
 

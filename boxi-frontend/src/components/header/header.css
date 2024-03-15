@@ -1,5 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 .header-container {
   display: flex;
   justify-content: space-between;
   height: 10vh;
+  align-items: center;
+}
+
+.header-container button {
+  font-family: "Madimi One", sans-serif;
+  font-size: 2vh;
+  background-color: transparent;
+  height: 4vh;
+  width: 5vw;
+  border-radius: 2vh;
+}
+
+.header-container a {
+  text-decoration: none;
 }

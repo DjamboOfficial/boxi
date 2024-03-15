@@ -2,10 +2,10 @@
 
 .homepage-container {
   display: flex;
-  flex-direction: column;
 }
 
 .homepage-logo {
+  background-color: transparent;
   height: 20vh;
   align-self: center;
 }
