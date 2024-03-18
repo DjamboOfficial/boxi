@@ -6,6 +6,7 @@ const connectDB = require("./db.js");
 const userAuthRoutes = require("./routes/userAuthRoutes.js");
 const productRoutes = require("./routes/productRoutes.js");
 const artisanRoutes = require("./routes/artisanRoutes.js");
+const cloudinary = require("cloudinary");
 const cors = require("cors");
 
 connectDB()

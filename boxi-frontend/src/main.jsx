@@ -5,10 +5,12 @@ import { UserAuthProvider } from "./contexts/userAuthContext";
 import { ArtisanAuthProvider } from "./contexts/artisanAuthContext"; // Import ArtisanAuthProvider
 import { Homepage } from "./pages/homepage/Homepage.jsx";
 import { MainLandingPage } from "./pages/main-landing-page/MainLandingPage.jsx";
-import { SignupPage } from "./pages/signup/SignupPage.jsx";
-import { LoginPage } from "./pages/login/LoginPage.jsx";
-import { ArtisanLogin } from "./pages/artisan-login/ArtisanLogin.jsx";
-import { ArtisanSignup } from "./pages/artisan-signup/ArtisanSignup.jsx";
+import { SignupPage } from "./pages/user/signup/SignupPage.jsx";
+import { LoginPage } from "./pages/user/login/LoginPage.jsx";
+import { ArtisanLogin } from "./pages/artisan/artisan-login/ArtisanLogin.jsx";
+import { ArtisanSignup } from "./pages/artisan/artisan-signup/artisanSignup.jsx";
+import { ArtisanDashboard } from "./pages/artisan/artisan-dashboard/ArtisanDashboardPage.jsx";
+
 import "./index.css";
 import "./App.css";
 
@@ -25,6 +27,10 @@ ReactDOM.render(
             <Route path="/login" element={<LoginPage />} />
             <Route path="/artisanLogin" element={<ArtisanLogin />}></Route>
             <Route path="/artisanSignup" element={<ArtisanSignup />}></Route>
+            <Route
+              path="/artisan-dashboard"
+              element={<ArtisanDashboard />}
+            ></Route>
           </Routes>
         </Router>
       </ArtisanAuthProvider>

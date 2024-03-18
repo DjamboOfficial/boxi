@@ -11,7 +11,7 @@ const artisanSchema = new mongoose.Schema(
     bio: {
       type: String,
     },
-    imageUrl: {
+    profilePicture: {
       type: String,
     },
     products: [
