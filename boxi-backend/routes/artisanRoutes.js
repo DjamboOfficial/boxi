@@ -24,6 +24,8 @@ router.post("/signup", async (req, res) => {
       password: hashedPassword,
       email,
       name: "",
+      profilePicture: "",
+      description: "",
     });
     await newArtisan.save();
     const token = generateToken(newArtisan._id);
@@ -50,6 +52,20 @@ router.post("/login", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+router.get("/details", verifyToken, async (req, res) => {
+  try {
+    const artisanId = req.user._id;
+    const artisan = await Artisan.findById(artisanId);
+
+    if (!artisan) {
+      return res.status(400).json({ message: "Artisan not found" });
+    }
+    return res.status(200).json({ artisan });
+  } catch (error) {
+    return res.status(500).json({ message: "Internal error" });
   }
 });
 

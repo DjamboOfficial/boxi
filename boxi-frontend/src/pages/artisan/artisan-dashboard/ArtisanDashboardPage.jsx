@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ProfilePictureUpload } from "./components/ProfilePictureUpload";
 import { NameInput } from "./components/NameInput";
+import { fetchArtisanDetails } from "../../../utils/api";
 
 export const ArtisanDashboard = () => {
-  const [profilePicture, setProfilePicture] = useState(null); // Changed initial state to null
+  const [profilePicture, setProfilePicture] = useState(null);
   const [name, setName] = useState("");
+  const [bio, setBio] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    fetchArtisanDetails(token)
+      .then((artisan) => {
+        setProfilePicture(artisan.profilePicture);
+        setName(artisan.name);
+        setBio(artisan.bio);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch artisan's details!", error);
+      });
+  }, []);
 
   const handlePictureChange = (file) => {
     setProfilePicture(file);
@@ -21,7 +36,6 @@ export const ArtisanDashboard = () => {
         console.error("No name given");
         return;
       }
-      console.log(name);
       const token = localStorage.getItem("token");
       const response = await axios.put(
         "http://localhost:3000/artisan/update-name",
@@ -32,11 +46,10 @@ export const ArtisanDashboard = () => {
           },
         }
       );
-      console.log(response.data); // Log the response for debugging
-      alert("Name updated successfully"); // Provide feedback to the user
+      console.log(response.data);
+      alert("Name updated successfully");
     } catch (error) {
       console.error("Failed to update name:", error);
-      // Handle errors here, e.g., show an error message to the user
     }
   };
 
@@ -56,7 +69,7 @@ export const ArtisanDashboard = () => {
         formData,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Fixed typo here
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -68,14 +81,17 @@ export const ArtisanDashboard = () => {
 
   return (
     <div className="artisan-dashboard-container">
-      {" "}
-      {/* Removed unnecessary fragment */}
       <h1>Artisan Dashboard</h1>
       <ProfilePictureUpload
         onPictureChange={handlePictureChange}
         onSave={handleSaveProfilePicture}
       />
       <NameInput onNameChange={handleNameChange} onSave={handleSaveName} />
+
+      <div className="artisan-details-container">
+        <img src={profilePicture} alt="artisan-picture" />
+        <h1>{name}</h1>
+      </div>
     </div>
   );
 };
