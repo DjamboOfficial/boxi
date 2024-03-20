@@ -10,6 +10,7 @@ import { LoginPage } from "./pages/user/login/LoginPage.jsx";
 import { ArtisanLogin } from "./pages/artisan/artisan-login/ArtisanLogin.jsx";
 import { ArtisanSignup } from "./pages/artisan/artisan-signup/artisanSignup.jsx";
 import { ArtisanDashboard } from "./pages/artisan/artisan-dashboard/ArtisanDashboardPage.jsx";
+import Cart from "./pages/user/cart/Cart.jsx";
 
 import "./index.css";
 import "./App.css";
@@ -27,6 +28,7 @@ ReactDOM.render(
             <Route path="/login" element={<LoginPage />} />
             <Route path="/artisanLogin" element={<ArtisanLogin />}></Route>
             <Route path="/artisanSignup" element={<ArtisanSignup />}></Route>
+            <Route path="/user/cart" element={<Cart />}></Route>
             <Route
               path="/artisan-dashboard"
               element={<ArtisanDashboard />}

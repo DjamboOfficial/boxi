@@ -36,7 +36,7 @@
 
 ## Artist 3: Maria Costa
 
-- **Country of Origin:** Portugal
+- **Country of Origin:** Angola
 - **Biography:** Maria Costa is a skilled woodworker and furniture maker hailing from Porto, Portugal. With a deep reverence for nature and a passion for craftsmanship, she creates timeless pieces that seamlessly blend form and function.
 
 **Product Descriptions:**
