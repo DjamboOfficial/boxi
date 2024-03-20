@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const multer = require("multer");
 const jwt = require("jsonwebtoken");
 const Artisan = require("../models/artisan");
 const { generateToken } = require("../authMiddleware");
 const { verifyToken } = require("../authMiddleware");
-
-const upload = multer({ dest: "uploads/" });
+const fileUploader = require("../config/cloudinary.config");
+const multer = require("multer");
 
 router.post("/signup", async (req, res) => {
   try {
@@ -24,6 +23,7 @@ router.post("/signup", async (req, res) => {
       password: hashedPassword,
       email,
       name: "",
+      bio: "",
       profilePicture: "",
       description: "",
     });
@@ -91,35 +91,21 @@ router.put("/update-name", verifyToken, async (req, res) => {
 
 router.post(
   "/save-profile-picture",
-  verifyToken,
-  upload.single("profilePicture"),
+  fileUploader.single("profile-picture"),
   async (req, res) => {
-    try {
-      if (!req.file) {
-        return res.status(400).json({ message: "No file uploaded" });
-      }
+    const artisanId = req.user._id;
+    console.log("2 =>", req.file.path);
+    await Artisan.findByIdAndUpdate(
+      artisanId,
+      { $set: { profilePicture: req.file.path } },
+      { new: true }
+    ).then((update) => {
+      console.log(update);
 
-      const artisanId = req.user._id;
-      const profilePicture = req.file.filename;
-
-      // Update artisan document with new profile picture filename
-      const updatedArtisan = await Artisan.findByIdAndUpdate(
-        artisanId,
-        { profilePicture: `${profilePicture}.png` },
-        { new: true }
-      );
-
-      if (!updatedArtisan) {
-        return res.status(404).json({ message: "Artisan not found" });
-      }
-
-      return res
-        .status(200)
-        .json({ message: "Profile picture saved!", artisan: updatedArtisan });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ message: "Internal server error" });
-    }
+      req.user.profilePicture = req.file.path;
+      res.redirect("/");
+      alert("OK"); // or use res.render if redirecting is not desired
+    });
   }
 );
 

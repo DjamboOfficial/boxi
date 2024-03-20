@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { ProfilePictureUpload } from "./components/ProfilePictureUpload";
 import { NameInput } from "./components/NameInput";
 import { fetchArtisanDetails } from "../../../utils/api";
+import InsertProduct from "./components/InsertProduct";
 
 export const ArtisanDashboard = () => {
   const [profilePicture, setProfilePicture] = useState(null);
   const [name, setName] = useState("");
   const [bio, setBio] = useState("");
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -16,6 +17,7 @@ export const ArtisanDashboard = () => {
         setProfilePicture(artisan.profilePicture);
         setName(artisan.name);
         setBio(artisan.bio);
+        console.log(artisan.profilePicture);
       })
       .catch((error) => {
         console.error("Failed to fetch artisan's details!", error);
@@ -24,6 +26,7 @@ export const ArtisanDashboard = () => {
 
   const handlePictureChange = (file) => {
     setProfilePicture(file);
+    setProfilePictureSaved(false);
   };
 
   const handleNameChange = (newName) => {
@@ -53,43 +56,30 @@ export const ArtisanDashboard = () => {
     }
   };
 
-  const handleSaveProfilePicture = async () => {
-    try {
-      if (!profilePicture) {
-        console.error("No profile picture selected");
-        return;
-      }
-
-      const formData = new FormData();
-      formData.append("profilePicture", profilePicture);
-
-      const token = localStorage.getItem("token");
-      const response = await axios.post(
-        "http://localhost:3000/artisan/save-profile-picture",
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+  const handleProductSubmission = (productData) => {
+    // Logic to save the product data in the catalogue
+    setProducts([...products, productData]);
   };
 
   return (
     <div className="artisan-dashboard-container">
       <h1>Artisan Dashboard</h1>
-      <ProfilePictureUpload
-        onPictureChange={handlePictureChange}
-        onSave={handleSaveProfilePicture}
-      />
-      <NameInput onNameChange={handleNameChange} onSave={handleSaveName} />
 
+      <NameInput
+        onNameChange={handleNameChange}
+        onSave={handleSaveName}
+        style={{ height: "1000px" }}
+      />
+      <InsertProduct onProductSubmit={handleProductSubmission} />
+      {/* Pass the submission handler function as prop */}
       <div className="artisan-details-container">
-        <img src={profilePicture} alt="artisan-picture" />
+        {profilePicture && (
+          <img
+            src={profilePicture}
+            alt="artisan-picture"
+            style={{ height: "200px" }}
+          />
+        )}
         <h1>{name}</h1>
       </div>
     </div>
