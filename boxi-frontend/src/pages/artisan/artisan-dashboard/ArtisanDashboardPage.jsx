@@ -24,11 +24,6 @@ export const ArtisanDashboard = () => {
       });
   }, []);
 
-  const handlePictureChange = (file) => {
-    setProfilePicture(file);
-    setProfilePictureSaved(false);
-  };
-
   const handleNameChange = (newName) => {
     setName(newName);
   };
@@ -56,9 +51,27 @@ export const ArtisanDashboard = () => {
     }
   };
 
-  const handleProductSubmission = (productData) => {
-    // Logic to save the product data in the catalogue
-    setProducts([...products, productData]);
+  const handleProductSubmission = async (newProduct) => {
+    try {
+      if (!newProduct) {
+        console.error("No new product!");
+        return;
+      }
+      const token = localStorage.getItem("token");
+      const response = await axios.post(
+        "http://localhost:3000/artisan/insert-product",
+        { product: newProduct }, // Pass new product as an object
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response.data); // Log response data after request
+    } catch (error) {
+      console.error("Error submitting product:", error);
+      // Handle error
+    }
   };
 
   return (
@@ -72,7 +85,7 @@ export const ArtisanDashboard = () => {
       />
       <InsertProduct onProductSubmit={handleProductSubmission} />
       {/* Pass the submission handler function as prop */}
-      <div className="artisan-details-container">
+      <div className="artisan-details-container" style={{ margin: "100px" }}>
         {profilePicture && (
           <img
             src={profilePicture}

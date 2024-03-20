@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./trending-products.css";
 import axios from "axios";
+
 export const Trendingproducts = () => {
   const [products, setProducts] = useState([]);
 
@@ -10,10 +11,29 @@ export const Trendingproducts = () => {
         "http://localhost:3000/products/trending"
       );
       const data = response.data;
+      console.log(data);
       setProducts(data);
     };
     fetchProducts();
   }, []);
+
+  const handleAddToCart = async (productId) => {
+    try {
+      const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+      await axios.post(
+        "http://localhost:3000/products/cart/add",
+        { productId },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Include the token in the request headers
+          },
+        }
+      );
+      console.log("Product added to cart");
+    } catch (error) {
+      console.error("Product not added to cart:", error);
+    }
+  };
 
   return (
     <>
@@ -21,8 +41,11 @@ export const Trendingproducts = () => {
         {products.length > 0 ? (
           products.map((product) => (
             <div className="trending-item-card" key={product._id}>
-              <img src={product.imageUrl} alt="product-image" />
+              <img src={product.image} alt="product-image" />
               <h3>{product.name}</h3>
+              <button onClick={() => handleAddToCart(product._id)}>
+                Add product to cart
+              </button>
             </div>
           ))
         ) : (

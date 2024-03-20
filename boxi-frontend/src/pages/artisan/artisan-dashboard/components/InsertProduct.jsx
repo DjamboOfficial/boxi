@@ -6,23 +6,36 @@ const InsertProduct = ({ onProductSubmit }) => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // Basic validation
+    if (!productName || !description || !price) {
+      setErrorMessage("Please fill out all fields.");
+      return;
+    }
+
     // Logic to handle form submission (e.g., sending data to server)
-    const product = {
+    const newProduct = {
       productName,
       description,
       price,
       image,
     };
-    console.log(product);
-    onProductSubmit(product);
+    console.log(newProduct);
+
     // Clear form fields
     setProductName("");
     setDescription("");
     setPrice("");
     setImage("");
+    setErrorMessage(""); // Clear error message
+
+    // Pass new product data to parent component
+    onProductSubmit(newProduct);
+
     // Hide the form after submission
     setShowForm(false);
   };
@@ -35,6 +48,7 @@ const InsertProduct = ({ onProductSubmit }) => {
       {showForm && (
         <div>
           <h2>Add a New Product</h2>
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="productName">Product Name:</label>
@@ -65,6 +79,16 @@ const InsertProduct = ({ onProductSubmit }) => {
                 required
               />
             </div>
+            {/* Add file input for image upload if needed */}
+            {/* <div>
+              <label htmlFor="image">Image:</label>
+              <input
+                type="file"
+                id="image"
+                accept="image/*"
+                onChange={(e) => setImage(e.target.files[0])}
+              />
+            </div> */}
             <button type="submit">Submit</button>
           </form>
         </div>

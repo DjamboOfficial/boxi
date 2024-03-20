@@ -5,19 +5,25 @@ const jwt = require("jsonwebtoken");
 const Artisan = require("../models/artisan");
 const { generateToken } = require("../authMiddleware");
 const { verifyToken } = require("../authMiddleware");
-const fileUploader = require("../config/cloudinary.config");
-const multer = require("multer");
 
 router.post("/signup", async (req, res) => {
   try {
     const { username, password, email } = req.body;
+
+    // Check for existing artisan
     const existingArtisan = await Artisan.findOne({
       $or: [{ username }, { email }],
     });
     if (existingArtisan) {
-      return res.status(400).json({ message: "Username already exists" });
+      return res
+        .status(400)
+        .json({ message: "Username or email already exists" });
     }
+
+    // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create a new artisan
     const newArtisan = new Artisan({
       username,
       password: hashedPassword,
@@ -28,10 +34,18 @@ router.post("/signup", async (req, res) => {
       description: "",
     });
     await newArtisan.save();
+
+    // Generate authentication token
     const token = generateToken(newArtisan._id);
-    res.status(200).json({ message: "Artisan registered!", token });
+
+    // Respond with success message and token
+    res
+      .status(200)
+      .json({ message: "Artisan registered successfully!", token });
   } catch (error) {
-    res.status(500).json({ message: "Internal error registering artisan" });
+    // Handle internal errors
+    console.error("Error registering artisan:", error);
+    res.status(500).json({ message: "Internal server error", error: error });
   }
 });
 
@@ -89,24 +103,33 @@ router.put("/update-name", verifyToken, async (req, res) => {
   }
 });
 
-router.post(
-  "/save-profile-picture",
-  fileUploader.single("profile-picture"),
-  async (req, res) => {
+router.post("/insert-product", verifyToken, async (req, res) => {
+  try {
     const artisanId = req.user._id;
-    console.log("2 =>", req.file.path);
-    await Artisan.findByIdAndUpdate(
-      artisanId,
-      { $set: { profilePicture: req.file.path } },
-      { new: true }
-    ).then((update) => {
-      console.log(update);
+    const newProduct = req.body.product;
 
-      req.user.profilePicture = req.file.path;
-      res.redirect("/");
-      alert("OK"); // or use res.render if redirecting is not desired
+    // Find artisan by ID and update products array
+    const updatedArtisan = await Artisan.findByIdAndUpdate(
+      artisanId,
+      { $push: { products: newProduct } }, // Using $push to add product to products array
+      { new: true } // To return the updated document
+    );
+
+    // Check if the artisan was found and updated
+    if (!updatedArtisan) {
+      return res.status(400).json({ message: "Artisan not found" });
+    }
+
+    // Respond with success message and updated artisan object
+    return res.status(200).json({
+      message: "Artisan's catalogue updated",
+      artisan: updatedArtisan,
     });
+  } catch (error) {
+    // Handle internal errors
+    console.error("Error inserting product:", error);
+    return res.status(500).json({ message: "Internal server error" });
   }
-);
+});
 
 module.exports = router;

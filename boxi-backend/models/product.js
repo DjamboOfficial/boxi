@@ -18,10 +18,8 @@ const productSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-
-    category: {
+    image: {
       type: String,
-      required: true,
     },
     artisan: {
       type: mongoose.Schema.Types.ObjectId,

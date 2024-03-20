@@ -16,8 +16,10 @@ const artisanSchema = new mongoose.Schema(
     },
     products: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
+        productName: String,
+        description: String,
+        price: Number,
+        image: String,
       },
     ],
   },
