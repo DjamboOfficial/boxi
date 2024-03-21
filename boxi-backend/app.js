@@ -2,6 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
+  apiVersion: "2022-08-01",
+});
+
 const connectDB = require("./db.js");
 const userAuthRoutes = require("./routes/userAuthRoutes.js");
 const productRoutes = require("./routes/productRoutes.js");
@@ -19,6 +24,38 @@ connectDB()
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+
+app.get("/payment/config", (req, res) => {
+  try {
+    const publishableKey = process.env.STRIPE_PUBLISHABLE_KEY;
+    if (!publishableKey) {
+      throw new Error("Stripe publishable key not found");
+    }
+    res.send({ publishableKey });
+  } catch (error) {
+    console.error("Error: ", error);
+    res.status(500).json({ error: "Failed to fetch Stripe publishable key" });
+  }
+});
+
+app.post("/payment/create-payment-intent", async (req, res) => {
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      currency: "eur",
+      amount: 100,
+      automatic_payment_methods: {
+        enabled: true,
+      },
+    });
+    res.send({ clientSecret: paymentIntent.client_secret });
+  } catch (error) {
+    return res.status(400).send({
+      error: {
+        message: error.message,
+      },
+    });
+  }
+});
 
 app.use("/auth", userAuthRoutes);
 app.use("/products", productRoutes);

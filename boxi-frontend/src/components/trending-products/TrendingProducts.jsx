@@ -41,11 +41,21 @@ export const Trendingproducts = () => {
         {products.length > 0 ? (
           products.map((product) => (
             <div className="trending-item-card" key={product._id}>
-              <img src={product.image} alt="product-image" />
-              <h3>{product.name}</h3>
-              <button onClick={() => handleAddToCart(product._id)}>
-                Add product to cart
-              </button>
+              <div className="trending-item-card-top-section">
+                <img src={product.image} alt="product.image" />
+              </div>
+              <div className="trending-item-card-bottom-section">
+                {" "}
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <button onClick={() => handleAddToCart(product._id)}>
+                  Add product to cart
+                </button>
+              </div>
+
+              {/*    
+             
+          */}
             </div>
           ))
         ) : (

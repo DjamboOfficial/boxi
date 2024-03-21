@@ -1,0 +1,5 @@
+.main-landing-page-container {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+}

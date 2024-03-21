@@ -160,7 +160,7 @@
 9. Leather passport holder with a debossed world map motif.
 10. Leather wine carrier designed to transport bottles in style.
 
-## Artist 10: Kaitlyn Thompson
+## Artist 10: Claire Thompson
 
 - **Country of Origin:** Canada
 - **Biography:** Kaitlyn Thompson is an innovative glass artist from Vancouver, Canada. With a passion for experimentation and creativity, she pushes the boundaries of glass art, creating stunning pieces admired for their beauty and craftsmanship.

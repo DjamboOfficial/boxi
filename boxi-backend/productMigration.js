@@ -7,6 +7,7 @@ const Product = require("./models/Product.js");
 async function migrateProducts() {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
+    await Product.deleteMany();
 
     const artisans = await Artisan.find(); // Use find() to query all artisans
     for (const artisan of artisans) {

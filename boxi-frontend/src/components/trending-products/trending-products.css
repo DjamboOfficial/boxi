@@ -1,23 +1,44 @@
 .trending-items-container {
-  margin: 1vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
   height: 50vh;
   display: flex;
   width: 100%;
   gap: 2vw;
+  overflow: hidden;
 }
 
 .trending-item-card {
-  background-color: white;
-  color: black;
+  border: 2px solid black;
+  border-radius: 3vh;
+  overflow: hidden;
+  background-color: transparent;
   height: 40vh;
-  width: 20vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0vh;
-  justify-content: center;
-  align-items: center;
+  color: black;
 }
 
-.trending-item-card img {
-  height: 10vh;
+.trending-item-card-top-section {
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.trending-item-card-bottom-section {
+  height: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.trending-item-card-top-section img {
+  height: 20vh;
 }

@@ -27,7 +27,7 @@ export const Homepage = () => {
             <animated.div
               className="parallax-bg"
               style={{
-                backgroundImage: `url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1709884979/boxi/djambo1990_51954_dawn_in_a_golden_hue_with_a_giant_sun_rising_o_95c9df71-12c3-4e05-80a2-5728dace761d_du3hci.png")`,
+                backgroundImage: `url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1711033746/boxi/djambo1990_51954_dawn_in_a_golden_hue_with_a_giant_sun_rising_o_95c9df71-12c3-4e05-80a2-5728dace761d_1_srvgkf.png")`,
                 transform: scroll.to((s) => `translateY(-${s * 0.3}px)`),
               }}
             />
@@ -43,7 +43,7 @@ export const Homepage = () => {
             <animated.div
               className="parallax-bg"
               style={{
-                backgroundImage: `url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1709884984/boxi/djambo1990_51954_In_the_craftsmans_studio_a_potters_wheel_takes_664b538f-06e0-43f8-9e5d-b7b029ba4a74_g73ogb.png")`,
+                backgroundImage: `url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1711033774/boxi/djambo1990_51954_In_the_craftsmans_studio_a_potters_wheel_takes_d376a3e1-010a-4874-a248-38095e459e66_ujf16y.png")`,
                 transform: scroll.to((s) => `translateY(-${s * 0.2}px)`),
               }}
             />
@@ -68,7 +68,7 @@ export const Homepage = () => {
             <animated.div
               className="parallax-bg"
               style={{
-                backgroundImage: `url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1709884990/boxi/djambo1990_51954_a_park_immersed_in_a_golden_hue_where_a_dad_is_e253ae00-c90f-4e71-84a3-1074da54d2dc_ngt4aj.png")`,
+                backgroundImage: `url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1711033780/boxi/djambo1990_51954_a_park_immersed_in_a_golden_hue_where_a_dad_is_e253ae00-c90f-4e71-84a3-1074da54d2dc_b7hdes.png")`,
                 transform: scroll.to((s) => `translateY(-${s * 0.3}px)`),
                 height: "180vh",
               }}

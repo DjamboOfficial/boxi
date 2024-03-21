@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { PaymentForm } from "../../../components/payment-form/PaymentForm";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -51,6 +52,7 @@ const Cart = () => {
           ))}
         </ul>
       )}
+      <PaymentForm />
     </div>
   );
 };

@@ -8,7 +8,7 @@ const { ObjectId } = require("mongodb");
 
 router.get("/trending", async (req, res) => {
   try {
-    const products = await Product.find().sort({ clickCount: -1 }).limit(2);
+    const products = await Product.find().sort({ clickCount: -1 }).limit(5);
     res.json(products);
   } catch (error) {
     res
@@ -106,7 +106,9 @@ router.get("/cart", verifyToken, async (req, res) => {
 
     for (const productId of productIds) {
       // Inside this loop, we'll perform the database query for each product ID
+      console.log("Fetching product for productId:", productId);
       const product = await Product.findById(productId);
+      console.log("Fetched product:", product);
 
       // After fetching the product details, we'll add it to the products array
       products.push(product);
