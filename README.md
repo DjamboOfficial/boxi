@@ -5,8 +5,8 @@
 
 **Product Descriptions:**
 
-1. Handcrafted ceramic mug with intricate floral patterns. ✅
-2. Colorful ceramic bowl with a hand-painted geometric design.
+1. ✅ Handcrafted ceramic mug with intricate floral patterns. ✅
+2. ✅ Colorful ceramic bowl with a hand-painted geometric design. ✅
 3. Decorative ceramic plate featuring a Spanish tile motif.
 4. Ceramic vase adorned with delicate hand-carved details.
 5. Set of ceramic coasters inspired by Spanish Moorish architecture.
@@ -23,8 +23,8 @@
 
 **Product Descriptions:**
 
-1. Handwoven bamboo basket with intricate lattice patterns. ✅
-2. Bamboo tea ceremony set including a chasen and chawan.
+1. ✅ Handwoven bamboo basket with intricate lattice patterns. ✅
+2. ✅ Bamboo tea ceremony set including a chasen and chawan. ✅
 3. Bamboo weaving wall art inspired by Japanese nature motifs.
 4. Traditional bamboo serving tray with a lacquered finish.
 5. Bamboo floor mat woven in a classic tatami pattern.
@@ -41,8 +41,8 @@
 
 **Product Descriptions:**
 
-1. Solid wood dining table with elegant tapered legs. ✅
-2. Handcrafted wooden rocking chair with a curved backrest.
+1. ✅ Solid wood dining table with elegant tapered legs. ✅
+2. ✅ Handcrafted wooden rocking chair with a curved backrest. ✅
 3. Wooden serving tray embellished with Portuguese tile motifs.
 4. Artisanal wooden cutting board made from sustainably sourced wood.
 5. Custom wooden bench with intricate hand-carved details.
@@ -59,8 +59,8 @@
 
 **Product Descriptions:**
 
-1. Intricately hammered copper tray with Arabic calligraphy motifs. ✅
-2. Metal wall sculpture inspired by the dunes of the Arabian desert.
+1. ✅ Intricately hammered copper tray with Arabic calligraphy motifs. ✅
+2. ✅ Metal wall sculpture inspired by the dunes of the Arabian desert. ✅
 3. Brass candle holder adorned with filigree patterns.
 4. Hand-forged iron door knocker featuring a camel motif.
 5. Metal table lamp with a pierced metal shade casting mesmerizing shadows.
@@ -77,8 +77,8 @@
 
 **Product Descriptions:**
 
-1. Handwoven wool rug featuring intricate Zapotec motifs.✅
-2. Colorful cotton throw blanket with hand-tied fringe accents.
+1. ✅ Handwoven wool rug featuring intricate Zapotec motifs. ✅
+2. ✅ Colorful cotton throw blanket with hand-tied fringe accents. ✅
 3. Traditional Mexican rebozo shawl hand-dyed with natural indigo.
 4. Handcrafted cotton hammock woven by skilled artisans.
 5. Embroidered pillow covers showcasing vibrant floral designs.
@@ -163,7 +163,7 @@
 ## Artist 10: Claire Thompson
 
 - **Country of Origin:** Canada
-- **Biography:** Kaitlyn Thompson is an innovative glass artist from Vancouver, Canada. With a passion for experimentation and creativity, she pushes the boundaries of glass art, creating stunning pieces admired for their beauty and craftsmanship.
+- **Biography:** Claire Thompson is an innovative glass artist from Vancouver, Canada. With a passion for experimentation and creativity, she pushes the boundaries of glass art, creating stunning pieces admired for their beauty and craftsmanship.
 
 **Product Descriptions:**
 
