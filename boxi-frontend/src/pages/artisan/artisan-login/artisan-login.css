@@ -1,0 +1,46 @@
+.login-page-container {
+  background-image: url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1711093066/boxi/djambo1990_51954_a_tidy_desk_standing_at_the_edge_of_an_enchant_48e6a6ec-2fbe-4237-bdca-229a9e3512f6_k3slrm.png");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-page-form-container {
+  height: 60vh;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  border-radius: 5vh;
+  height: 40vh;
+  width: 20vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form input {
+  height: 4vh;
+  width: 10vw;
+  color: white;
+  font-size: 2vh;
+}
+
+.login-form label {
+  font-size: 3vh;
+}
+
+.login-form button {
+  background-color: goldenrod;
+  color: black;
+  margin-top: 2vh;
+  height: 4vh;
+  width: 10vw;
+}

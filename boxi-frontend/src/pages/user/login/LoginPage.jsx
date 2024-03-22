@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../../contexts/userAuthContext";
-import "./login.css";
 import axios from "axios";
 
 export const LoginPage = () => {
@@ -35,7 +34,7 @@ export const LoginPage = () => {
       setIsLoggedIn(true);
       setUsername(username);
       console.log(username);
-      navigate("/");
+      navigate("/main-landing-page");
     } catch (error) {
       console.error("An error occurred:", error);
     }

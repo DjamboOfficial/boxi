@@ -50,7 +50,7 @@ export const SignupPage = () => {
       localStorage.setItem("token", token);
       setIsLoggedIn(true); // Update authentication state
       setUsername(username);
-      navigate("/");
+      navigate("/main-landing-page");
     } catch (error) {
       console.error("Sign up failed: ", error.response.data.message);
     }

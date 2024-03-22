@@ -27,6 +27,11 @@
   background-color: burlywood;
 }
 
+.homepage-message-button a {
+  text-decoration: none;
+  color: black;
+}
+
 .parallax-section {
   position: relative;
   height: 100vh;

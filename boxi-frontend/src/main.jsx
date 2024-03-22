@@ -35,6 +35,10 @@ ReactDOM.render(
               <Route path="/main-landing-page" element={<MainLandingPage />} />
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/login" element={<LoginPage />} />
+              <Route
+                path="/artisan-dashboard"
+                element={<ArtisanDashboard />}
+              ></Route>
               <Route path="/artisanLogin" element={<ArtisanLogin />}></Route>
               <Route path="/artisanSignup" element={<ArtisanSignup />}></Route>
               <Route path="/cart" element={<Cart />}></Route>

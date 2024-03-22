@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { PaymentForm } from "../../../components/payment-form/PaymentForm";
+import "./cart.css";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -30,29 +30,33 @@ const Cart = () => {
   }, []);
 
   return (
-    <div>
+    <div className="cart-page-container">
       <h2>Shopping Cart</h2>
-      {error ? (
-        <p>{error}</p>
-      ) : cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <ul>
-          {cartItems.map((item, index) => (
-            <li key={index}>
-              <div>
-                <img src={item.image} alt="product" />
+      <div className="cart-container">
+        {error ? (
+          <p>{error}</p>
+        ) : cartItems.length === 0 ? (
+          <p>Your cart is empty.</p>
+        ) : (
+          <ul>
+            {cartItems.map((item, index) => (
+              <li key={index}>
                 <div>
-                  <h3>{item.name}</h3>
-                  <p>{item.description}</p>
-                  <p>Price: ${item.price}</p>
+                  <img src={item.image} alt="product" />
+                  <div>
+                    <h3>{item.name}</h3>
+                    <p>{item.description}</p>
+                    <p>Price: ${item.price}</p>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-      <PaymentForm />
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <button>
+        <a href="/payment">Pay</a>
+      </button>
     </div>
   );
 };

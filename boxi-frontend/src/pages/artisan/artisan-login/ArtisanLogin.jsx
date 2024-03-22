@@ -59,9 +59,9 @@ export const ArtisanLogin = () => {
   };
 
   return (
-    <div className="signup-page-container">
-      <div className="signup-page-form-container">
-        <form className="signup-form" onSubmit={handleSubmit}>
+    <div className="login-page-container">
+      <div className="login-page-form-container">
+        <form className="login-form" onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -77,14 +77,6 @@ export const ArtisanLogin = () => {
             name="password"
             value={formData.password}
             onChange={handlePasswordChange}
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleEmailChange}
           />
           <button type="submit">Sign Up</button>
         </form>

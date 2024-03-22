@@ -1,0 +1,46 @@
+.signup-page-container {
+  background-image: url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1711093329/boxi/djambo1990_51954_two_girls_with_wicker_baskets_walking_among_th_9fd690b1-21e4-4767-8ac8-83802f64a11e_fntfmn.png");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-page-form-container {
+  height: 60vh;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form {
+  display: flex;
+  border-radius: 5vh;
+  height: 40vh;
+  width: 20vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form input {
+  height: 4vh;
+  width: 10vw;
+  color: white;
+  font-size: 2vh;
+}
+
+.signup-form label {
+  font-size: 3vh;
+}
+
+.signup-form button {
+  background-color: goldenrod;
+  color: black;
+  margin-top: 2vh;
+  height: 4vh;
+  width: 10vw;
+}

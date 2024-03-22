@@ -32,7 +32,7 @@ export const Homepage = () => {
               }}
             />
             <div className="parallax-content">
-              <h1 className="homepage-message-h1">Welcome to Our World</h1>
+              <h1 className="homepage-message-h1">Welcome to boxi</h1>
               <p className="homepage-message-p">
                 Where nature's bounty awaits, crafting wonders from earth's
                 treasures.

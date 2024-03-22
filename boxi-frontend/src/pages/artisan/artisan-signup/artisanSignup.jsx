@@ -52,7 +52,7 @@ export const ArtisanSignup = () => {
       localStorage.setItem("token", token);
       setArtisanIsLoggedIn(true); // Update authentication state
       setUsername(formData.username);
-      navigate("/");
+      navigate("/artisan-dashboard");
     } catch (error) {
       console.error("Sign up failed: ", error.response.data.message);
     }

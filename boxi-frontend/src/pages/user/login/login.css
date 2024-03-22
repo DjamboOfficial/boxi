@@ -1,0 +1,45 @@
+.login-page-container {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-page-form-container {
+  height: 60vh;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  border-radius: 5vh;
+  height: 40vh;
+  width: 20vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form input {
+  height: 4vh;
+  width: 10vw;
+  color: white;
+  font-size: 2vh;
+}
+
+.login-form label {
+  font-size: 3vh;
+}
+
+.login-form button {
+  background-color: goldenrod;
+  color: black;
+  margin-top: 2vh;
+  height: 4vh;
+  width: 10vw;
+}
