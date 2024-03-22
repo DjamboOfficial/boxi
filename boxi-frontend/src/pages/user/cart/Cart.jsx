@@ -38,25 +38,28 @@ const Cart = () => {
         ) : cartItems.length === 0 ? (
           <p>Your cart is empty.</p>
         ) : (
-          <ul>
+          <>
             {cartItems.map((item, index) => (
-              <li key={index}>
-                <div>
-                  <img src={item.image} alt="product" />
-                  <div>
-                    <h3>{item.name}</h3>
-                    <p>{item.description}</p>
-                    <p>Price: ${item.price}</p>
-                  </div>
+              <div className="trending-item-card" key={item._id}>
+                <div className="trending-item-card-top-section">
+                  <img src={item.image} alt="product.image" />
                 </div>
-              </li>
+                <div className="trending-item-card-bottom-section">
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                  <button onClick={() => handleAddToCart(item._id)}>
+                    Add product to cart
+                  </button>
+                </div>
+              </div>
             ))}
-          </ul>
+          </>
         )}
+
+        <button className="payment-button">
+          <a href="/payment">Checkout</a>
+        </button>
       </div>
-      <button>
-        <a href="/payment">Pay</a>
-      </button>
     </div>
   );
 };

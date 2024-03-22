@@ -1,10 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Kablammo&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Peralta&family=Reem+Kufi+Fun:wght@400..700&display=swap");
+
 .cart-page-container {
   height: 100vh;
   background-image: url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1711101835/boxi/djambo1990_51954_a_young_couple_in_a_fleamarket_debating_whethe_8d7310e2-dfa3-4b71-99b8-275c9d505c0f_ogiahw.png");
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart-container {
+  display: flex;
+  width: 25vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
 }
 
-.cart-container {
-  background-color: red;
-  width: 25vw;
+.cart-page-container h2 {
+  font-family: "Peralta", sans-serif;
+  background-color: beige;
+  border-radius: 2vh;
+  padding: 1vh;
+  color: black;
+  font-size: 4vh;
+}
+
+.payment-button {
+  height: 5vh;
+  width: 12vw;
+  background-color: bisque;
+}
+
+.payment-button a {
+  font-family: "Peralta", sans-serif;
+  color: black;
+  font-size: 2vh;
+  text-decoration: none;
 }

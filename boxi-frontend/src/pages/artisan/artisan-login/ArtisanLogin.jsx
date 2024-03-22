@@ -78,7 +78,7 @@ export const ArtisanLogin = () => {
             value={formData.password}
             onChange={handlePasswordChange}
           />
-          <button type="submit">Sign Up</button>
+          <button type="submit">Log In</button>
         </form>
       </div>
     </div>

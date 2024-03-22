@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kablammo&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Kablammo&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Peralta&family=Reem+Kufi+Fun:wght@400..700&display=swap");
+
 .header-container {
-  font-family: "Literata", sans-serif;
   display: flex;
   justify-content: space-around;
   height: 10vh;
@@ -43,7 +42,7 @@
 }
 
 .header-container a {
-  font-family: "Kablammo", sans-serif;
+  font-family: "Grandstander", sans-serif;
   font-weight: 500;
   color: black;
   text-decoration: none;

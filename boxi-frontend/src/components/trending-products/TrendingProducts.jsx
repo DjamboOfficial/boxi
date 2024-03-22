@@ -37,30 +37,33 @@ export const Trendingproducts = () => {
 
   return (
     <>
-      <div className="trending-items-container">
-        {products.length > 0 ? (
-          products.map((product) => (
-            <div className="trending-item-card" key={product._id}>
-              <div className="trending-item-card-top-section">
-                <img src={product.image} alt="product.image" />
+      <div className="trending-items-page-container">
+        <h2>Browse our most popular products...</h2>
+        <div className="trending-items-container">
+          {products.length > 0 ? (
+            products.map((product) => (
+              <div className="trending-item-card" key={product._id}>
+                <div className="trending-item-card-top-section">
+                  <img src={product.image} alt="product.image" />
+                </div>
+                <div className="trending-item-card-bottom-section">
+                  {" "}
+                  <h3>{product.name}</h3>
+                  <p>{product.description}</p>
+                  <button onClick={() => handleAddToCart(product._id)}>
+                    <img
+                      id="trending-item-button-image"
+                      src="https://res.cloudinary.com/dgwvbd9ki/image/upload/v1711036924/boxi/djambo1990_51954_a_realistic_wicker_basket_against_a_white_back_611c3c44-98a2-4c9f-9792-6c993f3e122d-removebg-preview_ytywa2.png"
+                      alt="add-to-cart-image"
+                    />{" "}
+                  </button>
+                </div>
               </div>
-              <div className="trending-item-card-bottom-section">
-                {" "}
-                <h3>{product.name}</h3>
-                <p>{product.description}</p>
-                <button onClick={() => handleAddToCart(product._id)}>
-                  Add product to cart
-                </button>
-              </div>
-
-              {/*    
-             
-          */}
-            </div>
-          ))
-        ) : (
-          <p>Loading...</p>
-        )}
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
       </div>
     </>
   );

@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Kablammo&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Peralta&family=Reem+Kufi+Fun:wght@400..700&display=swap");
 
 .horizontal-parallax {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Grandstander", sans-serif;
   height: 80vh;
   background-image: url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1709908516/boxi/djambo1990_51954_Hyperrealistic_photograph_of_a_studio_where_a__ddccb40e-63af-44b2-850e-9ab7b7104697_pz5sz7.png");
   background-position: center;

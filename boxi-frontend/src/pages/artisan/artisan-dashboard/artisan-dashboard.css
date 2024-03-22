@@ -1,0 +1,9 @@
+.artisan-dashboard-container {
+  background-image: url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1711109918/boxi/djambo1990_51954_In_the_craftsmans_studio_a_potters_wheel_takes_664b538f-06e0-43f8-9e5d-b7b029ba4a74_pztvly.png");
+  height: 100vh;
+}
+
+.artisan-details-container {
+  display: flex;
+  flex-direction: column;
+}

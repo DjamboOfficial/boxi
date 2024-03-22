@@ -3,6 +3,7 @@ import axios from "axios";
 import { NameInput } from "./components/NameInput";
 import { fetchArtisanDetails } from "../../../utils/api";
 import InsertProduct from "./components/InsertProduct";
+import "./artisan-dashboard.css";
 
 export const ArtisanDashboard = () => {
   const [profilePicture, setProfilePicture] = useState(null);
@@ -85,12 +86,12 @@ export const ArtisanDashboard = () => {
       />
       <InsertProduct onProductSubmit={handleProductSubmission} />
       {/* Pass the submission handler function as prop */}
-      <div className="artisan-details-container" style={{ margin: "100px" }}>
+      <div className="artisan-details-container">
         {profilePicture && (
           <img
+            className="artisan-image"
             src={profilePicture}
             alt="artisan-picture"
-            style={{ height: "200px" }}
           />
         )}
         <h1>{name}</h1>
