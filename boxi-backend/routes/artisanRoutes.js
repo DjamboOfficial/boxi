@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const Artisan = require("../models/artisan");
 const { generateToken } = require("../authMiddleware");
 const { verifyToken } = require("../authMiddleware");
+const Product = require("../models/Product");
 
 router.post("/signup", async (req, res) => {
   try {
@@ -129,6 +130,23 @@ router.post("/insert-product", verifyToken, async (req, res) => {
     // Handle internal errors
     console.error("Error inserting product:", error);
     return res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+router.get("/allProducts", verifyToken, async (req, res) => {
+  try {
+    const artisanId = req.user._id;
+    const artisan = await Artisan.findById(artisanId);
+
+    if (!artisan) {
+      return res.status(404).json({ message: "Artisan not found" });
+    }
+
+    // Send back the products array directly from the artisan document
+    res.json(artisan.products);
+  } catch (error) {
+    console.log("Error:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 

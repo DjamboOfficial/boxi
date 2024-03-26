@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { NameInput } from "./components/NameInput";
+import { ArtisanProducts } from "./components/ArtisanProducts";
 import { fetchArtisanDetails } from "../../../utils/api";
 import InsertProduct from "./components/InsertProduct";
 import "./artisan-dashboard.css";
@@ -9,7 +10,6 @@ export const ArtisanDashboard = () => {
   const [profilePicture, setProfilePicture] = useState(null);
   const [name, setName] = useState("");
   const [bio, setBio] = useState("");
-  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -76,25 +76,39 @@ export const ArtisanDashboard = () => {
   };
 
   return (
-    <div className="artisan-dashboard-container">
-      <h1>Artisan Dashboard</h1>
-
-      <NameInput
-        onNameChange={handleNameChange}
-        onSave={handleSaveName}
-        style={{ height: "1000px" }}
-      />
-      <InsertProduct onProductSubmit={handleProductSubmission} />
-      {/* Pass the submission handler function as prop */}
-      <div className="artisan-details-container">
-        {profilePicture && (
-          <img
-            className="artisan-image"
-            src={profilePicture}
-            alt="artisan-picture"
-          />
-        )}
-        <h1>{name}</h1>
+    <div className="artisan-dashboard-page-container">
+      <div className="artisan-dashboard-container">
+        <h1>Artisan Dashboard</h1>
+        <div className="artisan-dashboard">
+          <div className="artisan-products-container">
+            <ArtisanProducts />
+          </div>
+          <div className="insert-products-container">
+            <InsertProduct onProductSubmit={handleProductSubmission} />
+            {/* Pass the submission handler function as prop */}
+          </div>
+        </div>
+        <div className="artisan-details-container">
+          <div className="artisan-details-container-top">
+            {profilePicture && (
+              <img
+                className="artisan-image"
+                src={profilePicture}
+                alt="artisan-picture"
+              />
+            )}
+          </div>
+          <div className="artisan-details-container-bottom">
+            <div className="artisan-name-section">
+              <h1>{name}</h1>
+              <NameInput
+                onNameChange={handleNameChange}
+                onSave={handleSaveName}
+              />
+            </div>
+            <p className="artisan-bio">{bio}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -42,7 +42,6 @@ const verifyToken = async (req, res, next) => {
       if (!user) {
         let artisan;
         if (decoded.userId) {
-          console.log("Searching for Artisan with ID:", decoded.userId);
           artisan = await Artisan.findById(decoded.userId);
         }
 
@@ -51,7 +50,6 @@ const verifyToken = async (req, res, next) => {
           return res.status(404).json({ message: "User or Artisan not found" });
         }
 
-        console.log("Artisan found:", artisan);
         req.user = artisan;
         return next();
       }

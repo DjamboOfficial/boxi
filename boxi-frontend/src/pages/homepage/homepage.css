@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Kablammo&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Peralta&family=Reem+Kufi+Fun:wght@400..700&display=swap");
+
 .homepage-container {
   display: flex;
+  font-family: "Grandstander", sans-serif;
 }
 
 .homepage-logo {
@@ -9,18 +12,14 @@
 }
 
 .homepage-message-h1 {
-  font-family: "Lora", sans-serif;
   font-size: 8vh;
 }
 
 .homepage-message-p {
-  font-family: "Lora", sans-serif;
-
   font-size: 5vh;
 }
 
 .homepage-message-button {
-  font-family: "Lora", sans-serif;
   height: 10vh;
   width: 20vw;
   font-size: 4vh;
@@ -28,6 +27,7 @@
 }
 
 .homepage-message-button a {
+  font-family: "Grandstander", sans-serif;
   text-decoration: none;
   color: black;
 }

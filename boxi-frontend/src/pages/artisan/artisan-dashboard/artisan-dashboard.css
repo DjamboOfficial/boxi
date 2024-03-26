@@ -1,9 +1,96 @@
-.artisan-dashboard-container {
+.artisan-dashboard-page-container {
+  font-family: "Grandstander", sans-serif;
   background-image: url("https://res.cloudinary.com/dgwvbd9ki/image/upload/v1711109918/boxi/djambo1990_51954_In_the_craftsmans_studio_a_potters_wheel_takes_664b538f-06e0-43f8-9e5d-b7b029ba4a74_pztvly.png");
+  background-size: cover;
+  background-position: center;
   height: 100vh;
+  position: relative; /* Make sure to set the parent container as relative */
 }
 
 .artisan-details-container {
   display: flex;
   flex-direction: column;
+  background-color: antiquewhite;
+  position: absolute;
+  top: 12vh;
+  right: 2vw;
+  width: 17vw;
+  border-radius: 10vh;
+  overflow: hidden;
+}
+
+.artisan-details-container-top {
+  height: 35vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.artisan-dashboard-container img {
+  height: 100%;
+}
+
+/* Products Container*/
+
+.artisan-products-container {
+  margin-top: 10vh;
+  margin-left: 5vw;
+  height: 50vh;
+  width: 30vw;
+  overflow-y: scroll;
+}
+
+.artisan-product-card {
+  background-color: antiquewhite;
+  color: black;
+  border-radius: 5vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.artisan-product-card-item {
+  display: flex;
+  gap: 1vw;
+}
+
+.artisan-product-card img {
+  height: 20vh;
+}
+
+.insert-products-container {
+  background-color: antiquewhite;
+  margin-top: 10vh;
+  margin-left: 5vw;
+  width: 30vw;
+  height: 20vh;
+  border-radius: 5vh;
+  overflow: hidden;
+}
+
+.artisan-name-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.artisan-name-section h1 {
+  color: black;
+}
+
+.artisan-details-container-bottom {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.artisan-bio {
+  color: black;
+  margin: 2vw;
+}
+
+.artisan-dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
