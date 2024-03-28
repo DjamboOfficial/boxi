@@ -150,4 +150,13 @@ router.get("/allProducts", verifyToken, async (req, res) => {
   }
 });
 
+router.get("/all", async (req, res) => {
+  try {
+    const artisans = await Artisan.aggregate([{ $sample: { size: 4 } }]);
+    res.json(artisans);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

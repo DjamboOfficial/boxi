@@ -1,20 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Kablammo&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Peralta&family=Reem+Kufi+Fun:wght@400..700&display=swap");
 
-.trending-items-page-container {
+.artisans-page-container {
   font-family: "Grandstander";
   margin-top: 5vh;
   margin-bottom: 5vh;
   height: 75vh;
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 100%;
   gap: 2vw;
   overflow: hidden;
 }
+.artisans-page-container h2 {
+  color: black;
+  margin-left: -65vw;
+  font-size: 3vh;
+}
 
-.trending-items-container {
+.artisans-container {
   display: flex;
-  justify-content: space-around;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+
+  @media (max-width: 800px) {
+    gap: 12vw; /* Smaller gap for smaller screens */
+  }
+
+  @media (min-width: 800px) {
+    gap: 12vw; /* Larger gap for larger screens */
+  }
+
+  overflow: hidden; /* Moved inside .artisans-container rule block */
+  justify-content: space-around; /* Moved inside .artisans-container rule block */
 }
 
 .trending-items-page-container h2 {
@@ -23,42 +43,48 @@
   font-size: 3vh;
 }
 
-.trending-item-card {
+.artisan-card {
   border: 2px solid black;
   border-radius: 3vh;
   overflow: hidden;
   background-color: transparent;
   height: 60vh;
-  width: 15vw;
+  min-width: 240px;
+  max-width: 240px; /* Set a max-width to limit the size */
+  /* Set a max-width to limit the size */
   display: flex;
   flex-direction: column;
   color: black;
   justify-content: center;
   align-items: center;
+  animation: slideloop 180s linear infinite;
 }
 
-.trending-item-card-top-section {
+.artisan-card-top-section {
   height: 50%;
   display: flex;
 }
 
-.product-image {
+.artisan-image {
   height: 100% !important;
-  width: 100% !important;
 }
 
-.trending-item-card-bottom-section {
+.artisan-card-bottom-section {
   height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
+  text-align: center;
 }
 
-.trending-item-card-bottom-section p {
-  margin-left: 2vw;
-  margin-right: 2vw;
+.artisan-card-bottom-section p {
+  text-align: center;
+  font-size: 0.7vw;
+  overflow: hidden;
+  margin: 1vh;
 }
 
 .trending-item-card-bottom-section button {
@@ -70,4 +96,13 @@
 #trending-item-button-image {
   width: 4vw;
   overflow: hidden;
+}
+
+@keyframes slideloop {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(-120rem, 0px, 0px);
+  }
 }

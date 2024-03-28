@@ -14,7 +14,7 @@ export default function CheckoutForm() {
     if (!stripe || !elements) return;
     setIsProcessing(true);
 
-    const { error } = await stripe.confirmPayment({
+    const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
       confirmParams: {
         return_url: `${window.location.origin}/payment/completion`,
@@ -23,8 +23,8 @@ export default function CheckoutForm() {
     });
     if (error) {
       setMessage(error.message);
-    } else if (paymentIntent && payment.Intent.status === "succeeded") {
-      setMessage("Payment status: " + paymentIntent.status + "Yay!");
+    } else if (paymentIntent && paymentIntent.status === "succeeded") {
+      setMessage("Payment status: " + paymentIntent.status + ", Yay!");
     } else {
       setMessage("Unexpected state");
     }

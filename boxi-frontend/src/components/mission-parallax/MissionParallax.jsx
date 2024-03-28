@@ -42,22 +42,8 @@ export const MissionParallax = () => {
   return (
     <>
       <div className="horizontal-parallax" style={backgroundImageStyle}>
-        <nav className="horizontal-parallax-nav">
-          <ul>
-            <li>
-              <a href="">Our mission</a>
-            </li>
-            <li>
-              <a href="">Our mission</a>
-            </li>
-            <li>
-              <a href="">Our mission</a>
-            </li>
-            <li>
-              <a href="">Our mission</a>
-            </li>
-          </ul>
-        </nav>
+        <h1>boxi</h1>
+        <nav className="horizontal-parallax-nav"></nav>
       </div>
     </>
   );

@@ -5,10 +5,10 @@
 
 **Product Descriptions:**
 
-1. ✅ Handcrafted ceramic mug with intricate floral patterns. ✅
-2. ✅ Colorful ceramic bowl with a hand-painted geometric design. ✅
-3. Decorative ceramic plate featuring a Spanish tile motif.
-4. Ceramic vase adorned with delicate hand-carved details.
+1. ✅ Handcrafted ceramic mug with intricate floral patterns.
+2. ✅ Colorful ceramic bowl with a hand-painted geometric design.
+3. ✅ Decorative ceramic plate featuring a Spanish tile motif.
+4. ✅ A ceramic vase adorned with delicate hand-carved details of Flamenco dancers.
 5. Set of ceramic coasters inspired by Spanish Moorish architecture.
 6. Artisanal ceramic pitcher with a rustic glaze finish.
 7. Handmade ceramic figurine depicting flamenco dancers.

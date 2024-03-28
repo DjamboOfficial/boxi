@@ -44,7 +44,11 @@ export const Trendingproducts = () => {
             products.map((product) => (
               <div className="trending-item-card" key={product._id}>
                 <div className="trending-item-card-top-section">
-                  <img src={product.image} alt="product.image" />
+                  <img
+                    className="product-image"
+                    src={product.image}
+                    alt="product.image"
+                  />
                 </div>
                 <div className="trending-item-card-bottom-section">
                   {" "}
